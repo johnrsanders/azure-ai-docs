@@ -32,17 +32,12 @@ Every model in the Foundry catalog belongs to exactly one of five stages:
 | **Preview** | Experimental. Weights, runtime, and API schema may change. Not guaranteed to become GA. Labeled "Preview" in the catalog. | Yes | Yes |
 | **Generally Available (GA)** | Production-ready. Weights and APIs are fixed. Runtime patches for security vulnerabilities don't affect outputs. No label shown (default state). | Yes | Yes |
 | **Legacy** | Newer, more capable models exist. You should plan on migrating workloads. This stage is **optional** — models may skip directly from GA to Deprecated. | Yes (until deprecation) | Yes |
-| **Deprecated** | Existing customers may continue to create and manage deployments. No longer available to new customers — new customers cannot create deployments or access the model. | Existing customers: Yes. New customers: **No** | Yes |
+| **Deprecated** | Existing customers may continue to create and manage deployments. No longer available to new customers — new customers cannot create deployments or access the model. "Existing customer" is determined at the subscription level: whether that Azure subscription has ever deployed the specific model version. A new subscription under the same tenant doesn't inherit access. | Existing customers: Yes. New customers: **No** | Yes |
 | **Retired** | Removed from service. All inference requests return `410 Gone`. | **No** | **No** |
 
 > [!NOTE]
-> **"Existing customer" = subscription-level.** Whether a subscription is an existing or new customer is determined by whether that Azure subscription has ever deployed the specific model version. A new subscription under the same tenant does not inherit access to deprecated models from other subscriptions.
-
-> [!NOTE]
-> **Foundry Models (catalog)**: Some model providers define a shorter GA lifecycle — for example, 12 months instead of 18. When this applies, it is noted directly on the model in the [Model Retirement Schedule](../concepts/model-retirements.md).
-
-> [!NOTE]
-> **Fine-tuned models** follow a separate retirement schedule for training and deployment. See [Fine-tuned models](#fine-tuned-models) for details.
+> - **Fine-tuned models** follow a separate retirement schedule for training and deployment. See [Fine-tuned models](#fine-tuned-models) for details.
+> - **Foundry Models (catalog)**: Some model providers define a shorter GA lifecycle — for example, 12 months instead of 18. When this applies, it is noted directly on the model in the [Model Retirement Schedule](../concepts/model-retirements.md).
 
 ### Stage transitions at a glance
 
