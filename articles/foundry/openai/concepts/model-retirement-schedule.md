@@ -19,7 +19,7 @@ recommendations: false
 >
 > **Policy reference**: See [Model Lifecycle and Support Policy](model-retirements.md)
 >
-> **Retired models**: See [Retired Models](legacy-models.md)
+> **Retired models**: See [Retired Models](retired-models.md)
 
 ---
 
